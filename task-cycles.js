@@ -8,6 +8,14 @@
 // Your code:
 export const arrayOfMultiples = (num, length) => {
     // ... write code ...
+    let array = [];
+
+    for(let i = 1; i <= length; i++)
+    {
+        array.push(num * i);
+    }
+
+    return array;
 };
 
 // 2 =================================
@@ -20,7 +28,7 @@ export const arrayOfMultiples = (num, length) => {
 
 // Your code:
 export const changeDirection = (array) => {
-// ... write code ...
+    return array.reverse();
 };
 
 // 3 =================================
@@ -31,5 +39,13 @@ export const changeDirection = (array) => {
 
 // Your code:
 export const biggerArray = (array1, array2) => {
-// ... write code ...
+    let sumArray1 = array1.reduce((previosValue, currentValue) => {
+        return previosValue + currentValue
+    })
+
+    let sumArray2 = array2.reduce((previosValue, currentValue) => {
+        return previosValue + currentValue
+    })
+
+    return sumArray1 > sumArray2 ? {array: array1, sum: sumArray1} : {array: array2, sum: sumArray2};
 };

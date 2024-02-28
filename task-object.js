@@ -10,7 +10,7 @@
 
 // Your code:
 export const volumeOfBox = (obj) => {
-
+    return obj.width * obj.length * obj.height;
 };
   
 // 2 ----
@@ -20,8 +20,14 @@ export const volumeOfBox = (obj) => {
 
 // Your code:
 export const personObject = (firstname, lastname, age) => {
+    let person = {
+        firstname: firstname,
+        lastname: lastname,
+        age: age,
+        yearOfBirth: new Date().getFullYear() - age
+    }
 
-
+    return person;
 };
 
 // 3 ----
@@ -35,7 +41,11 @@ export const personObject = (firstname, lastname, age) => {
 
 //Your code:
 export const getBudgets = (persons) => {
+    let sum = persons.reduce((previousValue, currentValue) => {
+        return previousValue + currentValue.budget;
+    }, 0)
 
+    return sum;
 };
 
 // 4 ----
@@ -45,7 +55,6 @@ export const getBudgets = (persons) => {
 // sortVehiclesByPrice(vehicles) ➞ [{name: "T-47 Airspeeder", price :5}, {name: "AT-AT", price :20}, {name: "Executor Star Dreadnought", price: 999}]
 
 // Your code:
-export const sortVehiclesByPrice = (vehicles) => {
-  
-
+export const sortVehiclesByPrice = (vehicles) => {  
+    return vehicles.sort((a, b) => a.price - b.price);
 };
